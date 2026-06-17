@@ -548,6 +548,7 @@ func (h *Headscale) createRouter(grpcMux *grpcRuntime.ServeMux) *chi.Mux {
 
 	r.Get("/robots.txt", h.RobotsHandler)
 	r.Get("/health", h.HealthHandler)
+	r.Get("/healthz", h.HealthHandler)
 	r.Get("/version", h.VersionHandler)
 	r.Get("/key", h.KeyHandler)
 	r.Get("/register/{auth_id}", h.authProvider.RegisterHandler)
